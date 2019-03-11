@@ -1,0 +1,42 @@
+.page2-1,
+.page2-2,
+.page2-3{
+	left:20%;
+	width: 80%;
+	opacity: 1;
+}
+.page2-1{
+	top:-100%;
+}
+.page2-2,
+.page2-3{
+	animation: srun 1s linear infinite;
+}
+
+.page2-4 {
+	right: 10%;
+	bottom: 25%;
+	width: 0%;
+}
+
+.page2-5 {
+	right: 13%;
+	bottom: 15%;
+	width: 0%;
+}
+
+.page2-6 {
+	right: -20%;
+	bottom: 0%;
+	width: 20%;
+	height: 32%;
+}
+
+.page2-7,
+.page2-8,
+.page2-9,
+.page2-10 {
+	left: -20%;
+	top: 3%;
+	width: 20%;
+}

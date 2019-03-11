@@ -1,0 +1,55 @@
+.page5-1 {
+	width: 50%;
+	top: 15%;
+	left: 25%;
+	display: none;
+}
+
+.page5-2 {
+	top: 33%;
+	left: 49%;
+	width: 1%;
+	display: none;
+}
+
+.page5-3,
+.page5-4,
+.page5-5,
+.page5-6,
+.page5-7,
+.page5-8,
+.page5-9,
+.page5-10 {
+	top: -50%;
+	width: 100%;
+}
+
+@keyframes irun{
+	0%,50%,100%{ transform: scale(1);}
+	25%,75%{transform: scale(1.2);}
+}
+
+/*.page5-3{
+				top:45%;
+			}
+			.page5-4{
+				top:46%;
+			}
+			.page5-5{
+				top:47%;
+			}
+			.page5-6{
+				top:48%;
+			}
+			.page5-7{
+				top:49%;
+			}
+			.page5-8{
+				top:50%;
+			}
+			.page5-9{
+				top:51%;
+			}
+			.page5-10{
+				top:52%;
+			}*/

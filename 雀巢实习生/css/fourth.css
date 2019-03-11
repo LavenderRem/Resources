@@ -1,0 +1,54 @@
+.page4-1,
+.page4-2,
+.page4-3,
+.page4-4,
+.page4-5,
+.page4-6 {
+	display: none;
+	width: 100%;
+}
+
+.page4-1,.page4-2{
+	animation: frun 1s linear forwards;
+}
+
+@keyframes frun{
+	0%,50%,100%{transform: scale(1);}
+	25%,75%{transform: scale(1.2);}
+}
+.page4-5,
+.page4-6 {
+	animation: srun 1s linear infinite;
+}
+
+.page4-7,
+.page4-8 {
+	bottom: 15%;
+	width: 140%;
+	display: none;
+}
+
+.page4-7 {
+	left: -55%;
+}
+
+.page4-8 {
+	right: -55%;
+}
+
+.page4-9,
+.page4-10 {
+	width: 30%;
+	bottom: 5%;
+	left: 35%;
+	display: none;
+}
+.page4-9{
+	animation: jrun 1s linear infinite;
+}
+
+@keyframes jrun{
+	0%,50%,100%{bottom:5%;}
+	25%{bottom: 6%;}
+	75%{bottom: 4%;}
+}

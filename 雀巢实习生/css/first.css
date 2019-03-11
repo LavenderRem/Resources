@@ -1,0 +1,90 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+
+.content {
+	position: absolute;
+}
+
+.page {
+	position: relative;
+}
+
+.page1 {
+	background: white;
+}
+
+.page2 {
+	background: rgb(254,101,122);
+}
+
+.page3 {
+	background: rgb(9,190,227);
+}
+
+.page4 {
+	background: rgb(54,161,92);
+}
+
+.page5 {
+	background: rgb(102,156,245);
+}
+
+img {
+	position: absolute;
+}
+
+.page1-1 {
+	width: 100%;
+	top: 20%;
+	display: none;
+}
+
+.page1-4 {
+	width: 30%;
+	top: 2%;
+	left: 2%;
+}
+
+@keyframes run {
+	from {
+		left: 0%;
+	}
+	to {
+		left: 150%
+	}
+}
+
+@keyframes run1 {
+	from {
+		left: -150%;
+	}
+	to {
+		left: 0%
+	}
+}
+
+.page1-5,.page1-6,.page1-7,.page1-8,.page1-9,.page1-10{
+	top:45%;
+	width: 70%;
+	left: 15%;
+	display: none;
+}
+
+#musicbtn {
+	position: absolute;
+	width: 15%;
+	right: 5%;
+	animation: mrun 2s linear infinite;
+}
+
+@keyframes mrun {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}

@@ -1,0 +1,54 @@
+.page3-1,
+.page3-2,
+.page3-3 {
+	width: 80%;
+}
+
+.page3-1{
+	top:-100%;
+}
+.page3-2 {
+	animation: srun 1s linear infinite;
+}
+.page3-3 {
+	opacity: 1;
+	animation: srun 1s linear infinite;
+}
+
+@keyframes srun {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.3;
+	}
+}
+
+.page3-4 {
+	left: 2%;
+	top: 2%;
+	width: 0%;
+}
+
+.page3-5 {
+	left: 2%;
+	top: 2%;
+	width: 7%;
+	display: none;
+}
+
+.page3-6 {
+	left: -30%;
+	top: 2%;
+	width: 22%;
+}
+
+.page3-7,
+.page3-8,
+.page3-9,
+.page3-10 {
+	right: -20%;
+	bottom: 2%;
+	width: 20%;
+}

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/first.css" />
+		<link rel="stylesheet" href="css/second.css" />
+		<link rel="stylesheet" href="css/third.css" />
+		<link rel="stylesheet" href="css/fourth.css" />
+		<link rel="stylesheet" href="css/fifth.css" />
+	</head>
+
+	<body>
+		<div class="content">
+			<!--场景页一-->
+			<div class="page page1">
+				<img class="page1-1" src="images/indexSnacky.jpg" />
+				<img class="page1-2" src="images/indexHouse.jpg" />
+				<img class="page1-3" src="images/indexHouse.jpg" />
+				<img class="page1-4" src="images/logo_gray.png" />
+				<img class="page1-5" src="images/indexTxtThereis.png" />
+				<img class="page1-6" src="images/indexTxtLife.png" class="page2-" />
+				<img class="page1-7" src="images/indexTxtMoreTo.png" class="page2-" />
+				<img class="page1-8" src="images/indexTxtNestle.png" class="page2-" />
+				<img class="page1-9" src="images/indexTxtCnNestle.png" class="page2-" />
+				<img class="page1-10" src="images/indexTxtCnLife.png" </div>
+			</div>
+			<!--场景页二-->
+			<div class="page page2">
+				<img src="images/roleDog.png" class="page2-1" />
+				<img src="images/lightsRight.png" class="page2-2" />
+				<img src="images/starsRight.png" class="page2-3" />
+				<img src="images/selerTxtRightMe.png" class="page2-4" />
+				<img src="images/selerTxtRightTitle.png" class="page2-5" />
+				<img src="images/selerTxtRight.png" class="page2-6" />
+				<img src="images/selerTxtLeft01.png" class="page2-7" />
+				<img src="images/selerTxtLeft02.png" class="page2-8" />
+				<img src="images/selerTxtLeft03.png" class="page2-9" />
+				<img src="images/selerTxtLeft04.png" class="page2-10" />
+			</div>
+			<!--场景页三-->
+			<div class="page page3">
+				<img src="images/roleCat.png" class="page3-1" />
+				<img src="images/lightsLeft.png" class="page3-2" />
+				<img src="images/starsLeft.png" class="page3-3" />
+				<img src="images/selerTxtRightMe.png" class="page3-4" />
+				<img src="images/marketTxtLeftTitle.png" class="page3-5" />
+				<img src="images/marketTxtLeft.png" class="page3-6" />
+				<img src="images/marketTxtRight04.png" class="page3-7" />
+				<img src="images/marketTxtRight03.png" class="page3-8" />
+				<img src="images/marketTxtRight02.png" class="page3-9" />
+				<img src="images/marketTxtRight01.png" class="page3-10" />
+			</div>
+			<!--场景页四-->
+			<div class="page page4">
+				<img src="images/FixDogRole.png" class="page4-1" />
+				<img src="images/FixCatRole.png" class="page4-2" />
+				<img src="images/FixCatLight.png" class="page4-5" />
+				<img src="images/FixDogLight.png" class="page4-6" />
+				<img src="images/FixDogTxt.png" class="page4-4" />
+				<img src="images/FixCatTxt.png" class="page4-3" />
+				<img src="images/FixDogBtn.png" class="page4-7" />
+				<img src="images/FixCatBtn.png" class="page4-8" />
+				<img src="images/FixArrowTxtYou.png" class="page4-9" />
+				<img src="images/FixArrowTxt.png" class="page4-10" />
+			</div>
+			<!--场景页五-->
+			<div class="page page5">
+				<img src="images/titlesAcoreSummer.png" class="page5-1" />
+				<img src="images/titlesDots.png" class="page5-2" />
+				<img src="images/jobTitle01.png" class="page5-3" />
+				<img src="images/jobTitle02.png" class="page5-4" />
+				<img src="images/jobTitle03.png" class="page5-5" />
+				<img src="images/jobTitle04.png" class="page5-6" />
+				<img src="images/jobTitle05.png" class="page5-7" />
+				<img src="images/jobTitle06.png" class="page5-8" />
+				<img src="images/jobTitle07.png" class="page5-9" />
+				<img src="images/jobTitle08.png" class="page5-10" />
+			</div>
+		</div>
+		<audio src="music/music.mp3" autoplay="autoplay" id="music"></audio>
+		<img src="images/musicBtn.png" id="musicbtn" />
+	</body>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+	<script type="text/javascript">
+		$("#musicbtn").click(function() {
+			if($("#music")[0].paused) {
+				$("#musicbtn")[0].src = "images/musicBtn.png";
+				$("#music")[0].play();
+			} else {
+				$("#musicbtn")[0].src = "images/musicBtnOff.png";
+				$("#music")[0].pause();
+			}
+		})
+		var ht = window.innerHeight;
+		var wt = window.innerWidth;
+
+		var nowPage = 0;
+		$(".content").css({
+			"width": wt + "px",
+			"height": ht * 5 + "px"
+		})
+
+		$(".page").css({
+			"width": wt + "px",
+			"height": ht + "px"
+		})
+
+		$(".content").swipe({
+			//入口写法
+			//event表示当前滑动事件,dir表示滑动方向
+			swipe: function(event, dir) {
+				if(dir == "up" && nowPage < 4) {
+					nowPage += 1;
+				}
+				if(dir == "down" && nowPage > 0) {
+					nowPage -= 1;
+				}
+				$(".content").animate({
+					top: nowPage * -100 + "%"
+				}, 1000, function() {
+					if(nowPage == 1) {
+						//第二页的动画效果
+						$(".page2-1").animate({
+							top: "0%"
+						}, 1000, function() {
+							$(".page2-1")[0].src = "images/boy.gif"
+							$(".page2-4").animate({
+								width: "10%"
+							}, 1000, function() {
+								$(".page2-5").animate({
+									width: "6%"
+								}, 1000, function() {
+									$(".page2-6").animate({
+										right: "0%"
+									}, 1000)
+								})
+
+								$(".page2-7").animate({
+									left: "0%"
+								}, 500, function() {
+									$(".page2-8").animate({
+										left: "0%"
+									}, 500, function() {
+										$(".page2-9").animate({
+											left: "0%"
+										}, 500, function() {
+											$(".page2-10").animate({
+												left: "0%"
+											}, 500)
+										})
+									})
+								})
+							})
+						})
+					} else if(nowPage == 2) {
+						//第三页的动画效果
+						$(".page3-4").animate({
+							width: "13%"
+						}, 1000, function() {
+							$(".page3-5").fadeIn(1000, function() {
+								$(".page3-6").animate({
+									left: "2%"
+								}, 1000)
+
+								$(".page3-7").animate({
+									right: "3%"
+								}, 500, function() {
+									$(".page3-8").animate({
+										right: "3%"
+									}, 500, function() {
+										$(".page3-9").animate({
+											right: "3%"
+										}, 500, function() {
+											$(".page3-10").animate({
+												right: "3%"
+											}, 500)
+										})
+									})
+								})
+							})
+
+							$(".page3-1").animate({
+								top: "0%"
+							})
+						})
+					} else if(nowPage == 3) {
+
+						//第四页的动画效果
+						$(".page4-1").fadeIn(200, function() {
+							$(".page4-2").fadeIn(200, function() {
+								$(".page4-3").fadeIn(1000)
+								$(".page4-4").fadeIn(1000,
+									function() {
+										$(".page4-1")[0].src = "images/catFix.gif"
+										$(".page4-2")[0].src = "images/dogFix.gif"
+										$(".page4-7").fadeIn(1000)
+										$(".page4-8").fadeIn(1000,
+											function() {
+												$(".page4-7").animate({
+													left: "-4%"
+												}, 500)
+												$(".page4-8").animate({
+													right: "-6%"
+												}, 500, function() {
+													$(".page4-5").fadeIn(1000)
+													$(".page4-6").fadeIn(1000)
+													$(".page4-9").fadeIn(1000)
+													$(".page4-10").fadeIn(1000)
+												})
+											})
+									})
+							})
+
+						})
+					} else if(nowPage == 4) {
+						//第五页的动画效果
+						$(".page5-1").fadeIn(1000, function() {
+							$(".page5-2").fadeIn(1000, function() {
+								$(".page5-3").animate({
+									top: "45%"
+								}, 1000, function() {
+									scaleOnce(".page5-3")
+									$(".page5-4").animate({
+										top: "46%"
+									}, 1000, function() {
+										scaleOnce(".page5-4")
+										$(".page5-5").animate({
+											top: "47%"
+										}, 1000, function() {
+											scaleOnce(".page5-5")
+											$(".page5-6").animate({
+												top: "48%"
+											}, 1000, function() {
+												scaleOnce(".page5-6")
+												$(".page5-7").animate({
+													top: "49%"
+												}, 1000, function() {
+													scaleOnce(".page5-7")
+													$(".page5-8").animate({
+														top: "50%"
+													}, 1000, function() {
+														scaleOnce(".page5-8")
+														$(".page5-9").animate({
+															top: "51%"
+														}, 1000, function() {
+															scaleOnce(".page5-9")
+															$(".page5-10").animate({
+																top: "52%"
+															}, 1000, function() {
+																scaleOnce(".page5-10")
+															})
+														})
+													})
+												})
+											})
+										})
+									})
+								})
+							})
+						})
+					}
+				})
+
+			}
+		})
+
+		//给第五页的图片添加Css动画效果实现放缩
+		function scaleOnce(image) {
+			$(image).css({
+				animation: "irun 1s linear forwards"
+			})
+
+		}
+		//第一页的动画效果
+		$(".page1-1").fadeIn(2000, function() {})
+
+		$(".page1-2").css({
+			"width": 1.5 * wt + "px",
+			"bottom": "0%",
+			"left": "0%",
+			"animation": "run 10s linear infinite"
+		})
+
+		$(".page1-3").css({
+			"width": 1.5 * wt + "px",
+			"bottom": "0%",
+			"left": "-150%",
+			"animation": "run1 10s linear infinite"
+		})
+
+		$(".page1-5").fadeIn(1000, function() {
+			$(".page1-6").fadeIn(1000, function() {
+				$(".page1-7").fadeIn(1000, function() {
+					$(".page1-8").fadeIn(1000, function() {
+						$(".page1-9").fadeIn(1000, function() {
+							$(".page1-10").fadeIn(1000)
+						})
+					})
+				})
+			})
+		})
+	</script>
+
+</html>
