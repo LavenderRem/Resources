@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+        <link rel="stylesheet" type="text/css" href="css/first.css"/>
+        <link rel="stylesheet" type="text/css" href="css/second.css"/>
+        <style type="text/css">
+        	.page3-bg{
+        		width: 100%;
+        		height: 100%;
+        	}
+        	.page3-station{
+        		bottom: 0px;
+        		width: 100%;
+        	}
+        	.page3-bus{
+        		width: 70%;
+        		left: 0px;
+        		bottom: 10%;
+        	}
+        	.page3-me{
+        		width: 40%;
+        		right: 0px;
+        		bottom: 12%;
+        	}
+        	.page3-early{
+        		width: 50%;
+        		top: 5%;
+        		left: 0px;
+        		display: none;
+        	}
+        	.page3-last{
+        		width: 50%;
+        		top:15%;
+        		left: 0px;
+        		display: none;
+        	}
+        	.page3-wall{
+        		bottom: 0px;
+        		right: 0px;
+        		height: 75%;
+        		display: none;
+        	}
+        	.page3-cry{
+        		width: 40%;
+        		right: 6%;
+        		top: 6%;
+        		display: none;
+        	}
+        	.page3-where{
+        		width: 0%;
+        		bottom: 5%;
+        	}
+        	.page3-space{
+        		top: 10% ;
+        		left:5%;
+        		width: 0%;
+        	}
+        	.lightBg{
+        		width: 100%;
+        		height: 100%;
+        	}
+        	.cornerTitle{
+        		width: 30%;
+        		right: 0px;
+        		top: 5%;
+        	}
+        	.light{
+        		width: 21%;
+        		left: 0%;
+        		bottom: 0%;
+        	}
+        	.guide{
+        		width: 50%;
+        		left: 15%;
+        		bottom: 38%;
+        	}
+        </style>
+	</head>
+	<body>
+		<div class="content">
+		<!--场景页1-->
+		<div class="page page1">
+			<img src="img/indexTxt.png" class="title"/>
+			<img src="img/indexFlowers01.png" class="flower1"/>
+			<img src="img/indexFlowers02.png" class="flower2"/>
+			<img src="img/indexCloud.png" class="clouds"/>
+			<img src="img/indexElements.png" class="elements"/>
+			<img src="img/indexBuilding.png" class="building"/>
+			<img src="img/endAvatar.png" class="pe"/>
+		</div>
+		<!--场景页2-->
+		<div class="page page2">
+			<img src="img/wasBg.jpg" class="bg"/>
+			<img src="img/wasFarm.png" class="was1"/>
+			<img src="img/wasIT.png" class="was2"/>
+		</div>
+		<!--场景页3-->
+		<div class="page page3">
+			
+		<img src="img/earlyBg.jpg" class="page3-bg">
+        <img src="img/lastBusStation.png" class="page3-station">
+        <img src="img/bus.png" class="page3-bus">
+        <img src="img/lastBusAvatar.png" class="page3-me">
+        <img src="img/earlyTitle.png" class="page3-early">
+        <img src="img/lastBusTitle.png" class="page3-last">
+        <!--场景二-->
+        <img src="img/myTeamWall.png" class="page3-wall">
+        <img src="img/myTeamAvatar.png" class="page3-cry">
+        <img src="img/myTeamSpace.png" class="page3-space">
+        <img src="img/myteamWhereTxt.png" class="page3-where">
+
+		</div>
+		<!--场景页4-->
+		<div class="page page4">
+			<img src="img/lightOffBg.jpg" class="lightBg" id="lightbg"/>
+			<img src="img/cornerTitle.png" class="cornerTitle"/>
+			<img src="img/clickGuide.png" class="guide"/>
+			<img src="img/lightOff.png" class="light" id="light"/>
+
+			
+		</div>
+		<!--场景页5-->
+		<div class="page page5"></div>
+		</div>
+		<audio src="img/music.mp3" id="music" autoplay="autoplay"></audio>
+		<img src="img/musicBtn.png" id="musicbtn"/>
+		<img src="img/arrow-up.png" class="up"/>
+	</body>
+	
+	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+	<script type="text/javascript">
+		var light=document.getElementById("light");
+		var lightbg=document.getElementById("lightbg")
+		light.onclick=function(){
+			light.src="img/lightOn.png";
+			lightbg.src="img/lightOnBg.jpg";
+			$(".cornerTitle").fadeOut(1000);
+			$(".guide").fadeOut(1000);
+		}
+		//音乐播放器按钮事件
+		var btn=document.getElementById("musicbtn");
+		btn.onclick=function(){
+//			alert("我养你啊");
+			var music=document.getElementById("music");
+//			判断音乐的播放状态
+			if(music.paused){
+				btn.src="img/musicBtn.png";
+				music.play();
+			}else{
+				btn.src="img/musicBtnOff.png";
+				music.pause();
+			}
+		}
+
+//		$("#musicbtn").click(function(){
+//			if($("#music").paused){
+//				$("#musicbtn").src="musicBtnOff.png";
+//				$("#music")[0].play();
+//			}else{
+//				$("#musicbtn").src="musicBtn.png";
+//				$("#music")[0].pause();
+//			}
+//		})
+		
+		
+		//表示整个屏幕的高度
+		var ht=window.innerHeight;
+		//表示整个屏幕的宽度
+		var wt=window.innerWidth;
+		$(".content").css({
+			"width":wt,
+			"height":ht*5
+		})
+		$(".page").css({
+			"width":wt,
+			"height":ht
+		})
+		//淡入
+		$(".building").fadeIn(2000,function(){
+			$(".pe").animate({
+				"width":"70%"
+			},2000)
+		})
+		//设置一个当前页
+		var nowPage=0;
+		//给最大的content添加触控事件
+		$(".content").swipe({
+			//event表示当前滑动事件 dir表示滑动方向
+			swipe:function(event,dir){
+//				console.log(dir);
+				if(dir=="up"){
+					nowPage=nowPage+1;
+				}
+				if(dir=="down"){
+					nowPage=nowPage-1;
+				}
+				if(nowPage<0){
+					nowPage=0;
+				}
+				if(nowPage>4){
+					nowPage=4;
+				}
+				$(".content").animate({
+					"top":nowPage*(-100)+"%"
+				},1000,function(){
+					//当执行完滑动效果之后执行当前页面的动画效果
+					//创建一个执行动画的函数
+					startAnimation(nowPage);
+				})
+			}
+			
+			
+		})
+		function startAnimation(nowPage){
+			//执行第二页的动画
+			if(nowPage==1){
+				$(".bg").fadeIn(1000,function(){
+					$(".was1").animate({
+						"width":"70%",
+						"right":"0px"
+					},1000,function(){
+						$(".was2").animate({
+							"width":"70%",
+							"left":"30%"
+						})
+					})
+				})
+					}
+			if(nowPage==2){
+				//淡入我们的标题
+				$(".page3-early").fadeIn(2000,function(){
+					$(".page3-last").fadeIn(1000)
+				});
+				//实现bus的移动
+				$(".page3-bus").animate({
+					"left":"-100%"
+				},2000)
+				//实现人的移动
+				$(".page3-me").animate({
+					"right":"50%"
+				},3000,function(){
+					//让第一个场景退出
+					$(".page3-last").fadeOut(1000)
+					$(".page3-early").fadeOut(1000)
+					$(".page3-station").fadeOut(2000)
+					$(".page3-me").fadeOut(2000,function(){
+						$(".page3-wall").fadeIn(2000)
+						$(".page3-cry").fadeIn(2000,function(){
+							$(".page3-space").animate({
+								"width":"30%"
+							},2000,function(){
+								$(".page3-where").animate({
+									"width":"20%"
+								},2000)
+							})
+						})
+							
+					})
+				})
+			}
+		}
+	</script>
+</html>
